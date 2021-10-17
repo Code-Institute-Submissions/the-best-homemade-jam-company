@@ -30,8 +30,11 @@ def get_sales_figures():
         """
     
         jam_sales = numbers_str.split(",")
-        print(jam_sales)
+        validate_numbers(jam_sales)
 
+def validate_numbers(values):
+    print(values)
+    
 get_sales_figures()
         
 
