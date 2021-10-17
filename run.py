@@ -25,14 +25,13 @@ def get_sales_figures():
         print("-Separate the numbers by commas.\n")
 
         numbers_str = input("Please insert your jam sales numbers here:")
+        """
         print(f"You insert {numbers_str}.")
         """
+    
         jam_sales = numbers_str.split(",")
+        print(jam_sales)
 
-        if validate_numbers(jam_sales):
-            print("Your data was accepted!")
-        return jam_sales
-        """
 get_sales_figures()
         
 
