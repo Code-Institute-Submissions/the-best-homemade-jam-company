@@ -34,6 +34,17 @@ def get_sales_figures():
 
 def validate_numbers(values):
     print(values)
+    """
+    In the try, all string values are converted into integers.
+    The ValueError raise message appears if the user didn't type 10 values or if the strings cannot be converted into integers.
+    """
+    try:
+        if len(values) != 10:
+            raise ValueError(
+                f"You need to provide 10 values. You have type {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Sorry, but you insert invalid data. {e}, please try again.\n")
     
 get_sales_figures()
         
