@@ -12,8 +12,27 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the_best_homemade_jam_company')
 
-sales = SHEET.worksheet('sales')
+def get_sales_figures():
+    """
+    Get jam sales data imputed by the user.
+    Run a while loop requesting the jam sales util recive a valid string.
+    A valid string must contain ten numbers separated by commas.
+    """
+    while True:
+        print("Welcome, to type your jam sales")
+        print("-Follow this example: 2,4,6,8,10,12,14,18,20")
+        print("-Insert ten numbers;")
+        print("-Separate the numbers by commas.\n")
 
-allSales = sales.get_all_values()
+        numbers_str = input("Please insert your jam sales numbers here:")
+        print(f"You insert {numbers_str}.")
+        """
+        jam_sales = numbers_str.split(",")
 
-print(allSales)
+        if validate_numbers(jam_sales):
+            print("Your data was accepted!")
+        return jam_sales
+        """
+get_sales_figures()
+        
+
