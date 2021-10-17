@@ -39,6 +39,7 @@ def validate_numbers(values):
     The ValueError raise message appears if the user didn't type 10 values or if the strings cannot be converted into integers.
     """
     try:
+        [int(value) for value in values]
         if len(values) != 10:
             raise ValueError(
                 f"You need to provide 10 values. You have type {len(values)}"
