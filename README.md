@@ -2,7 +2,7 @@
 
 <h1 align="center">The Best Homemade Jam Recipes</h1>
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Screenshot (235)](https://user-images.githubusercontent.com/83631970/137712725-5d995b8b-8c82-4f57-8842-5a49733e6a8b.png)
 
 [Click here to view the live project :link:](https://the-best-homemade-jam-company.herokuapp.com/)
 The Best Homemade Jam Recipes Company is a fictional company project. The project idea was create a Data Automation Platform that help a small jam shop that want to expand their business, to control the amount of product they have (stock), add sales, and realize which products are the best sellers and make the most profit. 
