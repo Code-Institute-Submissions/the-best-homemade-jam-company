@@ -9,7 +9,7 @@ The Best Homemade Jam Recipes Company is a fictional company project. The projec
 # Table Of Contents
 
 1. [User Experience (UX)](#user-experience)
-2. [Technologies Used](#Technologies Used)
+2. [Technologies Used](#technologies-used)
 3. [Bugs](#Bugs)
 4.  [Deployment](#Deployment)
 5.  [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
@@ -48,6 +48,6 @@ This project was deployed using Heroku.
 
 * Steps for deployment:
  
-# Deployment
+# Credits
 * For this project I use the code and structure learned in the Code Institute Love Sandwiches Project teach by Anna Greaves (https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)
 * Code Institute Python Essentials
