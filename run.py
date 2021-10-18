@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -11,6 +12,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the_best_homemade_jam_company')
+
 
 def get_sales_figures():
     """
@@ -37,11 +39,13 @@ def get_sales_figures():
 
     return jam_sales
 
+
 def validate_numbers(values):
     print(values)
     """
     In the try, all string values are converted into integers.
-    The ValueError raise message appears if the user didn't type 10 values or if the strings cannot be converted into integers.
+    The ValueError raise message appears if the user didn't type 10 values
+    or if the strings cannot be converted into integers.
     """
     try:
         [int(value) for value in values]
@@ -55,6 +59,7 @@ def validate_numbers(values):
 
     return True   
 
+
 def update_sales_worksheet(numbers):
     """
     Update sales worksheet.
@@ -65,6 +70,22 @@ def update_sales_worksheet(numbers):
     sales_worksheet.append_row(numbers)
     print("New sales added. Worksheet updated.\n")
 
+
+def surplus_numbers(sales_row):
+    """
+    Calculate surplus values.
+    Take the stock values and subtract the number of jam sold.
+
+    Positive surplus means jam jars from that day's stock that were not sold.
+    Negative surplus means jam jars that were not available that day
+    because that day's stock was all sold out,
+    so it was booked and taken from the next day's stock.
+    """
+    print("Extracting surplus values...")
+    stock = SHEET.worksheet("stock").get_all_values()
+    pprint(stock)
+
+
 def main():
     """
     Run all functions
@@ -72,6 +93,8 @@ def main():
     numbers = get_sales_figures()
     sales_numbers = [int(num) for num in numbers]
     update_sales_worksheet(sales_numbers)
+    surplus_numbers(sales_numbers)
+
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")           
 main()
