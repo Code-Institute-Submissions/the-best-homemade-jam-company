@@ -65,7 +65,7 @@ def update_worksheet(numbers, worksheet):
     Insert a list of integers into a worksheet with the values given
     Update the worksheet.
     """
-    print(f"Adding new {worksheet} data")
+    print(f"Adding new {worksheet} data\n")
     update_worksheet_numbers = SHEET.worksheet(worksheet)
     update_worksheet_numbers.append_row(numbers)
     print(f"New {worksheet} data added. {worksheet} worksheet updated.\n")
@@ -91,23 +91,39 @@ def surplus_numbers(sales_row):
     for stock, sales in zip(stock_row, sales_row):
         surplus = int(stock) - sales
         surplus_values.append(surplus)
-    pprint(surplus_values)
 
     return surplus_values
 
 
 def collect_last_5_entries():
     """
-    Collects the 5 last enztries for each jam flavour from sales worksheet
+    Collects the 5 last entries for each jam flavour from sales worksheet
     Returns data as a list of lists
     """
     sales = SHEET.worksheet("sales")
 
     columns = []
-    for ind in range(1,10):
-        col = sales.column_value()
-        col.append(column [-5:]
+    for ind in range(1, 10):
+        column = sales.col_values(ind)
+        columns.append(column[-7:])
+
     return columns
+
+
+def stock_numbers(numbers):
+    """
+    Add 10% to calculate the average stock
+    """
+    print("Calculating stock values...\n")
+    add_new_stock_numbers = []
+
+    for column in numbers:
+        int_column = [int(num) for num in column]
+        average  = sum(int_column) / len(int_column)
+        stock_num = average * 1.1
+        add_new_stock_numbers.append(round(stock_num))
+
+    return add_new_stock_numbers
 
 
 def main():
@@ -119,11 +135,13 @@ def main():
     update_worksheet(sales_numbers, "sales")
     add_new_surplus_numbers = surplus_numbers(sales_numbers)
     update_worksheet(add_new_surplus_numbers, "surplus")
+    sales_columns = collect_last_5_entries()
+    stock_values = stock_numbers(sales_columns)
+    update_worksheet(stock_values, "stock")
 
 
-print("Welcome to The Best Homemade Jam Company Data Automation,")           
+print("Welcome to The Best Homemade Jam Company Data Automation,")
+main()
 
-#main()
 
-collect_last_5_entries()
 
