@@ -20,7 +20,7 @@ def get_sales_figures():
     """
 
     while True:
-        print("Welcome, to type your jam sales,")
+        print("to type your jam sales,")
         print("follow this example: 2,4,6,8,10,12,14,18,20")
         print("-Insert ten numbers;")
         print("-Separate the numbers by commas.\n")
@@ -65,9 +65,13 @@ def update_sales_worksheet(numbers):
     sales_worksheet.append_row(numbers)
     print("New sales added. Worksheet updated.\n")
 
+def main():
+    """
+    Run all functions
+    """
+    numbers = get_sales_figures()
+    sales_numbers = [int(num) for num in numbers]
+    update_sales_worksheet(sales_numbers)
 
-numbers = get_sales_figures()
-sales_numbers = [int(num) for num in numbers]
-update_sales_worksheet(sales_numbers)
-        
-
+print("Welcome to The Best Homemade Jam Company Data Automation,")           
+main()
