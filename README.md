@@ -9,13 +9,9 @@ The Best Homemade Jam Recipes Company is a fictional company project. The projec
 # Table Of Contents
 
 1. [User Experience (UX)](#user-experience)
-    - [User stories](#user-stories)
-    - [Design](#design)
-    - [Wireframes](#wireframes)
-    - [MongoDB Database](#mongodb-database)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4.  [Languages Used](#languages-used)
+2. [Technologies Used](#Technologies Used)
+3. [Bugs](#Bugs)
+4.  [Deployment](#Deployment)
 5.  [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
 6.  [Testing](#testing)
     - [Testing User Stories](#testing-user-stories)
@@ -25,17 +21,11 @@ The Best Homemade Jam Recipes Company is a fictional company project. The projec
     - [GitHub](#github-pages)
     - [Heroku](#heroku)
 8. [Credits](#credits)
-    - [Code](#code)
-    - [Content](#content)
-    - [Media](#media)
-    - [Acknowledgements](#acknowledgements)
 
 # User Experience
 
 1. This project was developed for a company that aims to easily add sales and receive information about its stock;
 2. It is easy to navigate, fast and information is provided on what data the user should input
-
-# Workflow
 
 # Technologies Used
 
@@ -49,12 +39,15 @@ gspread.exceptions.WorksheetNotFound: Sales
 * After deployment I noticed that I had the mentioned error, which was easily corrected, by distraction I capitalized the first letter of the word sales and so it no longer corresponded to the respective spreedsheet.
 
 # Validator
+![Screenshot (237)](https://user-images.githubusercontent.com/83631970/137716378-0b10b07f-d18d-46a6-84a1-928f03db2ed2.png)
+* pythonchecker.com
+
 
 # Deployment
 This project was deployed using Heroku.
 
 * Steps for deployment:
  
-# Credits
-* For this project I use the code learn in the Code Institute Love Sandwiches Project
+# Deployment
+* For this project I use the code and structure learned in the Code Institute Love Sandwiches Project teach by Anna Greaves (https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode)
 * Code Institute Python Essentials
