@@ -83,7 +83,8 @@ def surplus_numbers(sales_row):
     """
     print("Extracting surplus values...")
     stock = SHEET.worksheet("stock").get_all_values()
-    pprint(stock)
+    stock_row = stock[-1]
+    pprint(stock_row)
 
 
 def main():
