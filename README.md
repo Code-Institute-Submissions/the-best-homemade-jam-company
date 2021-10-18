@@ -1,31 +1,60 @@
+
+
+<h1 align="center">The Best Homemade Jam Recipes</h1>
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome joanavrsilva,
+[Click here to view the live project :link:](https://the-best-homemade-jam-company.herokuapp.com/)
+The Best Homemade Jam Recipes Company is a fictional company project. The project idea was create a Data Automation Platform that help a small jam shop that want to expand their business, to control the amount of product they have (stock), add sales, and realize which products are the best sellers and make the most profit. 
+# Table Of Contents
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+1. [User Experience (UX)](#user-experience)
+    - [User stories](#user-stories)
+    - [Design](#design)
+    - [Wireframes](#wireframes)
+    - [MongoDB Database](#mongodb-database)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4.  [Languages Used](#languages-used)
+5.  [Frameworks, Libraries & Programs Used](#frameworks-libraries-and-programs-used)
+6.  [Testing](#testing)
+    - [Testing User Stories](#testing-user-stories)
+    - [Additional Testing](#additional-testing)
+    - [Bugs and Fixes](#bugs-and-fixes)
+7. [Deployment](#deployment)
+    - [GitHub](#github-pages)
+    - [Heroku](#heroku)
+8. [Credits](#credits)
+    - [Code](#code)
+    - [Content](#content)
+    - [Media](#media)
+    - [Acknowledgements](#acknowledgements)
 
-## Reminders
+# User Experience
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+1. This project was developed for a company that aims to easily add sales and receive information about its stock;
+2. It is easy to navigate, fast and information is provided on what data the user should input
 
-## Creating the Heroku app
+# Workflow
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+# Technologies Used
 
-1. `heroku/python`
-2. `heroku/nodejs`
+A brief overview of the languages, frameworks, and other tools I've used on this project:
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- [Python](https://pt.wikipedia.org/wiki/Python)
+- [Code Institute Python Essentials Template]( https://github.com/Code-Institute-Org/python-essentials-template)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+# Bugs
+gspread.exceptions.WorksheetNotFound: Sales
+* After deployment I noticed that I had the mentioned error, which was easily corrected, by distraction I capitalized the first letter of the word sales and so it no longer corresponded to the respective spreedsheet.
 
-Connect your GitHub repository and deploy as normal.
+# Validator
 
-## Constraints
+# Deployment
+This project was deployed using Heroku.
 
-The deployment terminal is set to 80 s by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+* Steps for deployment:
+ 
+# Credits
+* For this project I use the code learn in the Code Institute Love Sandwiches Project
+* Code Institute Python Essentials
