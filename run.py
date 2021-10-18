@@ -60,15 +60,26 @@ def validate_numbers(values):
     return True   
 
 
-def update_sales_worksheet(numbers):
+def update_sales(numbers):
     """
     Update sales worksheet.
     Add new row with the user imput values.
     """
-    print("Adding new sales...\n")
+    print("Adding new sales data...\n")
     sales_worksheet = SHEET.worksheet("sales")
     sales_worksheet.append_row(numbers)
-    print("New sales added. Worksheet updated.\n")
+    print("New sales data added. Worksheet updated.\n")
+
+
+def update_surplus(numbers):
+    """
+    Update surplus worksheet.
+    Add new row with the user imput values.
+    """
+    print("Adding new surplus data...\n")
+    surplus_worksheet = SHEET.worksheet("surplus")
+    surplus_worksheet.append_row(numbers)
+    print("New surplus data added. Worksheet updated.\n")
 
 
 def surplus_numbers(sales_row):
@@ -81,7 +92,7 @@ def surplus_numbers(sales_row):
     because that day's stock was all sold out,
     so it was booked and taken from the next day's stock.
     """
-    print("Extracting surplus values...")
+    print("Extracting surplus values...\n")
     stock = SHEET.worksheet("stock").get_all_values()
     stock_row = stock[-1]
     print(f"row(stock) {stock_row}")
@@ -102,9 +113,9 @@ def main():
     """
     numbers = get_sales_figures()
     sales_numbers = [int(num) for num in numbers]
-    update_sales_worksheet(sales_numbers)
+    update_sales(sales_numbers)
     add_new_surplus_numbers = surplus_numbers(sales_numbers)
-    print(add_new_surplus_numbers)
+    update_surplus(add_new_surplus_numbers)
 
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")           
