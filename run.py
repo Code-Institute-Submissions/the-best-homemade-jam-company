@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -27,7 +26,7 @@ def get_sales_figures():
         print("-Insert ten numbers;")
         print("-Separate the numbers by commas.\n")
 
-        numbers_str = input("Please insert your jam sales numbers here:")
+        numbers_str = input("Please insert your jam sales numbers here:\n")
         jam_sales = numbers_str.split(",")
 
         if validate_numbers(jam_sales):
@@ -105,11 +104,11 @@ def main():
     """
     numbers = get_sales_figures()
     jam_sales = [int(num) for num in numbers]
-    update_worksheet(jam_sales, "sales")
+    update_worksheet(jam_sales, "Sales")
 
     sales_columns = collect_last_5_entries()
     stock_numbers = new_stock_numbers(sales_columns)
-    update_worksheet(stock_numbers, "stock")
+    update_worksheet(stock_numbers, "Stock")
     
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")
