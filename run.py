@@ -18,9 +18,10 @@ def get_sales_figures():
     Run a while loop requesting the jam sales util recive a valid string.
     A valid string must contain ten numbers separated by commas.
     """
+
     while True:
-        print("Welcome, to type your jam sales")
-        print("-Follow this example: 2,4,6,8,10,12,14,18,20")
+        print("Welcome, to type your jam sales,")
+        print("follow this example: 2,4,6,8,10,12,14,18,20")
         print("-Insert ten numbers;")
         print("-Separate the numbers by commas.\n")
 
@@ -28,9 +29,13 @@ def get_sales_figures():
         """
         print(f"You insert {numbers_str}.")
         """
-    
         jam_sales = numbers_str.split(",")
-        validate_numbers(jam_sales)
+
+        if validate_numbers(jam_sales):
+            print("You insert valid information!")
+            break
+
+    return jam_sales
 
 def validate_numbers(values):
     print(values)
@@ -46,7 +51,11 @@ def validate_numbers(values):
             )
     except ValueError as e:
         print(f"Sorry, but you insert invalid data. {e}, please try again.\n")
-    
-get_sales_figures()
+        return False
+
+    return True   
+
+
+numbers = get_sales_figures()
         
 
