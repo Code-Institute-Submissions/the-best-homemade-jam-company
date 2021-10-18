@@ -96,6 +96,20 @@ def surplus_numbers(sales_row):
     return surplus_values
 
 
+def collect_last_5_entries():
+    """
+    Collects the 5 last enztries for each jam flavour from sales worksheet
+    Returns data as a list of lists
+    """
+    sales = SHEET.worksheet("sales")
+
+    columns = []
+    for ind in range(1,10):
+        col = sales.column_value()
+        col.append(column [-5:]
+    return columns
+
+
 def main():
     """
     Run all functions.
@@ -108,4 +122,8 @@ def main():
 
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")           
-main()
+
+#main()
+
+collect_last_5_entries()
+
