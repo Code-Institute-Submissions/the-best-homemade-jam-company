@@ -104,11 +104,11 @@ def main():
     """
     numbers = get_sales_figures()
     jam_sales = [int(num) for num in numbers]
-    update_worksheet(jam_sales, "Sales")
+    update_worksheet(jam_sales, "sales")
 
     sales_columns = collect_last_5_entries()
     stock_numbers = new_stock_numbers(sales_columns)
-    update_worksheet(stock_numbers, "Stock")
+    update_worksheet(stock_numbers, "stock")
     
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")
