@@ -55,7 +55,19 @@ def validate_numbers(values):
 
     return True   
 
+def update_sales_worksheet(numbers):
+    """
+    Update sales worksheet.
+    Add new row with the user imput values.
+    """
+    print("Adding new sales...\n")
+    sales_worksheet = SHEET.worksheet("sales")
+    sales_worksheet.append_row(numbers)
+    print("New sales added. Worksheet updated.\n")
+
 
 numbers = get_sales_figures()
+sales_numbers = [int(num) for num in numbers]
+update_sales_worksheet(sales_numbers)
         
 
