@@ -84,7 +84,16 @@ def surplus_numbers(sales_row):
     print("Extracting surplus values...")
     stock = SHEET.worksheet("stock").get_all_values()
     stock_row = stock[-1]
-    pprint(stock_row)
+    print(f"row(stock) {stock_row}")
+    print(f"row(sales) {stock_row}")
+
+    surplus_values = []
+    for stock, sales in zip(stock_row, sales_row):
+        surplus = int(stock) - sales
+        surplus_values.append(surplus)
+    pprint(surplus_values)
+
+    return surplus_values
 
 
 def main():
@@ -94,7 +103,8 @@ def main():
     numbers = get_sales_figures()
     sales_numbers = [int(num) for num in numbers]
     update_sales_worksheet(sales_numbers)
-    surplus_numbers(sales_numbers)
+    add_new_surplus_numbers = surplus_numbers(sales_numbers)
+    print(add_new_surplus_numbers)
 
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")           
