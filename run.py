@@ -16,8 +16,8 @@ SHEET = GSPREAD_CLIENT.open('the_best_homemade_jam_company')
 
 def get_sales_figures():
     """
-    Get jam sales data imputed by the user.
-    Run a while loop requesting the jam sales util recive a valid string.
+    Get jam sales data imputed by the user
+    Run a while loop requesting the jam sales util recive a valid string
     A valid string must contain ten numbers separated by commas.
     """
 
@@ -57,34 +57,23 @@ def validate_numbers(values):
         print(f"Sorry, but you insert invalid data. {e}, please try again.\n")
         return False
 
-    return True   
+    return True  
 
 
-def update_sales(numbers):
+def update_worksheet(numbers, worksheet):
     """
-    Update sales worksheet.
-    Add new row with the user imput values.
+    Insert a list of integers into a worksheet with the values given
+    Update the worksheet.
     """
-    print("Adding new sales data...\n")
-    sales_worksheet = SHEET.worksheet("sales")
-    sales_worksheet.append_row(numbers)
-    print("New sales data added. Worksheet updated.\n")
-
-
-def update_surplus(numbers):
-    """
-    Update surplus worksheet.
-    Add new row with the user imput values.
-    """
-    print("Adding new surplus data...\n")
-    surplus_worksheet = SHEET.worksheet("surplus")
-    surplus_worksheet.append_row(numbers)
-    print("New surplus data added. Worksheet updated.\n")
+    print(f"Adding new {worksheet} data")
+    update_worksheet_numbers = SHEET.worksheet(worksheet)
+    update_worksheet_numbers.append_row(numbers)
+    print(f"New {worksheet} data added. {worksheet} worksheet updated.\n")
 
 
 def surplus_numbers(sales_row):
     """
-    Calculate surplus values.
+    Calculate surplus values
     Take the stock values and subtract the number of jam sold.
 
     Positive surplus means jam jars from that day's stock that were not sold.
@@ -109,13 +98,13 @@ def surplus_numbers(sales_row):
 
 def main():
     """
-    Run all functions
+    Run all functions.
     """
     numbers = get_sales_figures()
     sales_numbers = [int(num) for num in numbers]
-    update_sales(sales_numbers)
+    update_worksheet(sales_numbers, "sales")
     add_new_surplus_numbers = surplus_numbers(sales_numbers)
-    update_surplus(add_new_surplus_numbers)
+    update_worksheet(add_new_surplus_numbers, "surplus")
 
 
 print("Welcome to The Best Homemade Jam Company Data Automation,")           
